@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "lambda-sidecar-service"
+version = "0.1.0"
+description = ""
+authors = []
+
+[tool.poetry.dependencies]
+python = "^3.10"
+httpx = "^0.24.0"
+pulumi-aws = "^5.37.0"
+pulumi = "^3.64.0"
+pulumi-command = "^4.5.0"
+pyinstaller = {version = "^5.10.1", python = "<3.12"}
+boto3 = "^1.26.118"
+fastapi = "^0.95.1"
+uvicorn = "^0.21.1"
+black = "^23.3.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
