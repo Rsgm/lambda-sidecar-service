@@ -10,7 +10,7 @@ app = FastAPI()
 
 
 class Settings(BaseSettings):
-    proxy_port: int
+    sidecar_port: int
 
     oidc_domain: str
     client_id_parameter: str
@@ -27,4 +27,4 @@ def proxy_request():
 
 if __name__ == "__main__":
     config = Settings
-    uvicorn.run(app, port=config.proxy_port, log_level="info")
+    uvicorn.run(app, port=config.sidecar_port, log_level="info")
