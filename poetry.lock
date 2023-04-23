@@ -549,6 +549,22 @@ pulumi = ">=3.0.0,<4.0.0"
 semver = ">=2.8.1"
 
 [[package]]
+name = "pulumi-random"
+version = "4.12.1"
+description = "A Pulumi package to safely use randomness in Pulumi programs."
+category = "main"
+optional = false
+python-versions = "*"
+files = [
+    {file = "pulumi_random-4.12.1.tar.gz", hash = "sha256:94e3d797b1fa4eb42d3f9c0ab2e7d2657bf22daa52c08ea686a00f281d8123cf"},
+]
+
+[package.dependencies]
+parver = ">=0.2.1"
+pulumi = ">=3.0.0,<4.0.0"
+semver = ">=2.8.1"
+
+[[package]]
 name = "pydantic"
 version = "1.10.7"
 description = "Data validation and settings management using python type hints"
@@ -876,4 +892,4 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "aadbeb62bdaba91f539ae4827a2c7ac5de538361b6b4fe399c26e740709de06a"
+content-hash = "d2048f59c59ccc165ebafa6f850e5c856b28265b10f31265b8e16b4c5d7cf659"

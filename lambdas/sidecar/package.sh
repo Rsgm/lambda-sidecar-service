@@ -11,3 +11,5 @@ pip install \
     -r $BUILD_DIR/requirements.txt
 
 $BUILD_DIR/bin/pyinstaller -F $LAMBDA_DIR/sidecar.py
+
+rm -r $BUILD_DIR

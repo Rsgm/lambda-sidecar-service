@@ -2,3 +2,4 @@
 /dist/
 .idea
 sidecar.spec
+__pycache__

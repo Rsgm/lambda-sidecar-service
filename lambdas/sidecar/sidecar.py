@@ -12,19 +12,19 @@ app = FastAPI()
 class Settings(BaseSettings):
     sidecar_port: int
 
-    # oidc_domain: str
+    # oidc_issuer: str
     # client_id_parameter: str
     # client_secret_parameter: str
 
     @property
     def client_id(self):
-        # client = boto3.client("parameters")
+        # client = boto3.client("ssm")
         # client.get
         return
 
 
 @app.get("/")
-def proxy_request():
+def get_token():
     r = httpx.get("https://example.com")
     r.raise_for_status()
 

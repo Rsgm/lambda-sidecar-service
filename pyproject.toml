@@ -10,6 +10,7 @@ pulumi-aws = "^5.37.0"
 pulumi = "^3.64.0"
 pulumi-command = "0.7.2"
 black = "^23.3.0"
+pulumi-random = "^4.12.1"
 
 [tool.poetry.dev-dependencies]
 
