@@ -33,7 +33,7 @@ command.local.run(
 sidecar_layer = aws.lambda_.LayerVersion(
     "test-sidecar-layer",
     code=pulumi.FileArchive(SIDECAR_ZIP),
-    layer_name="oidc_client_sidecar",
+    layer_name="sidecar_layer",
 )
 
 aws.lambda_.LayerVersionPermission(
@@ -58,9 +58,7 @@ lambda_function = aws.lambda_.Function(
             variables={
                 "AWS_LAMBDA_EXEC_WRAPPER": "/opt/lambda_wrapper.sh",
                 "SIDECAR_PORT": "31566",
-                "OIDC_ISSUER": "example.com",
-                "CLIENT_ID_PARAMETER": ssm.client_id_parameter.name,
-                "CLIENT_SECRET_PARAMETER": ssm.client_secret_parameter.name,
+                "CREDENTIALS_PARAMETER": ssm.credentials_parameter.name,
             },
         ),
     ),
