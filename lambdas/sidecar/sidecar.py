@@ -12,9 +12,15 @@ app = FastAPI()
 class Settings(BaseSettings):
     sidecar_port: int
 
-    oidc_domain: str
-    client_id_parameter: str
-    client_secret_parameter: str
+    # oidc_domain: str
+    # client_id_parameter: str
+    # client_secret_parameter: str
+
+    @property
+    def client_id(self):
+        # client = boto3.client("parameters")
+        # client.get
+        return
 
 
 @app.get("/")
@@ -26,5 +32,5 @@ def proxy_request():
 
 
 if __name__ == "__main__":
-    config = Settings
+    config = Settings()
     uvicorn.run(app, port=config.sidecar_port, log_level="info")

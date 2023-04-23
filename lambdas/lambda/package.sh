@@ -1,5 +1,6 @@
+mkdir -p $BUILD_DIR
 
-pyinstaller -F lambda/sidecar.py
+poetry export --only lambda -f requirements.txt --output "$LAMBDA_DIR/requirements.txt"
 
 pip install \
     --platform manylinux2014_x86_64 \
@@ -7,9 +8,8 @@ pip install \
     --implementation cp \
     --python 3.10 \
     --only-binary=:all: --upgrade \
-    -r lambda/requirements.txt
+    -r requirements.txt
 
-cp lambda/* $BUILD_DIR
+cp ./* $BUILD_DIR
 zip -r $BUILD_DIR $OUTPUT_ZIP
-
 rm -r $BUILD_DIR
